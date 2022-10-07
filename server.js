@@ -1,9 +1,8 @@
 const express = require('express')
 const app = express()
 const port = 3000
-let fs = require("fs");
+let fs = require("fs");aa
 let cors = require('cors');
-const { Server } = require('http');
 let wordlist = fs.readFileSync("./br-utf8.txt", "UTF-8").split("\n")
 server.use(cors())
 let gerarPalavra = () => {
