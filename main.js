@@ -1,5 +1,4 @@
 let palavra = document.querySelector("h3")
-
 let passou = document.querySelectorAll("button")[0]
 let nova = document.querySelectorAll("button")[1]
 let score = 0
