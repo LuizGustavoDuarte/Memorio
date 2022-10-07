@@ -4,7 +4,7 @@ const port = 3000
 let fs = require("fs");
 let cors = require('cors');
 let wordlist = fs.readFileSync("./br-utf8.txt", "UTF-8").split("\n")
-server.use(cors())
+app.use(cors())
 let gerarPalavra = () => {
     return wordlist[Math.floor(Math.random() * wordlist.length)]
 }
