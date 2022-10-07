@@ -8,6 +8,7 @@ let gerarPalavra = () => {
 }
 
 app.get('/', (req,res) => {
+    console.log("palavra requisitada")
     res.send(gerarPalavra())
 })
 
@@ -17,7 +18,6 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
-fetch
 // const { get } = require('http')
 
 // let palavras = fs.readFileSync("./br-utf8.txt", "UTF-8").split("\n")
