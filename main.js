@@ -6,12 +6,15 @@ let score = 0
 let passadas = []
 
 let gerarPalavra = () => {
-
-    let resp = ""
-    fetch("http://localhost:3000", {method: "GET"}).then(data => data.json()).then(resposta => {resp = resposta.palavra}).then(() => {
-        console.log(resp)
-        palavra.innerHTML = resp
-    })
+    if( (Math.floor(Math.random() * 10) ) <= 2 && passadas.length > 1) {
+        palavra.innerHTML = passadas[Math.floor(Math.random() * passadas.length)]
+    } else {
+        let resp = ""
+        fetch("http://localhost:3000", {method: "GET"}).then(data => data.json()).then(resposta => {resp = resposta.palavra}).then(() => {
+            console.log(resp)
+            palavra.innerHTML = resp
+        })
+    }
 }
 
 passou.addEventListener("click", () => {
@@ -19,6 +22,7 @@ passou.addEventListener("click", () => {
         passadas.push(palavra.innerHTML)
         gerarPalavra()
         console.log(passadas)
+        score++;
     } else {
         window.alert("Perdeu")
     }
@@ -31,5 +35,6 @@ nova.addEventListener("click", () => {
         passadas.push(palavra.innerHTML)
         gerarPalavra()
         console.log(passadas)
+        score++;
     }
 })
