@@ -8,7 +8,7 @@ let passadas = []
 let gerarPalavra = () => {
 
     let resp = ""
-    fetch("http://localhost:3000", {method: "GET"}).then(resposta => {resp = resposta}).then(() => {
+    fetch("http://localhost:3000", {method: "GET"}).then(data => data.json()).then(resposta => {resp = resposta.palavra}).then(() => {
         console.log(resp)
         palavra.innerHTML = resp
     })
