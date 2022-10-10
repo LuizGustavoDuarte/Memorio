@@ -5,10 +5,14 @@ let pontos = document.querySelector("#pontos")
 let score = 0
 let errado = false
 let passadas = []
+let ultimaPalavra = ""
 
 let gerarPalavra = () => {
-    if ((Math.floor(Math.random() * 10)) <= 3 && passadas.length > 1) {
-        palavra.innerHTML = passadas[Math.floor(Math.random() * passadas.length)]
+    if ((Math.floor(Math.random() * 10)) <= 3 && passadas.length > 5) {
+        let palavraGerada = passadas[Math.floor(Math.random() * passadas.length)]
+        
+        palavra.innerHTML = palavraGerada != ultimaPalavra ? palavraGerada : passadas[Math.floor(Math.random() * passadas.length)]
+    
     } else {
         let resp = ""
         fetch("http://localhost:3000", { method: "GET" }).then(data => data.json()).then(resposta => { resp = resposta.palavra }).then(() => {
