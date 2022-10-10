@@ -7,3 +7,24 @@ h1 {
 h1 span{
     color: yellowgreen;
 }
+
+body {
+    background-image: url(wall.jpg);
+    background-color: rgb(211, 233, 236);
+    background-blend-mode: multiply;
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.863);
+    width: 50%;
+    padding: 30px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 90%;
+        margin: 10px;
+    }
+}
